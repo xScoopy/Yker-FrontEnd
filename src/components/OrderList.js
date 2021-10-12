@@ -18,6 +18,22 @@ const OrderList = (props) => {
         })
     }
 
+    //Order mapping to individual components
+    const orderItems = orders.map(
+        ({ orderNumber, fulfillmentStatus, createdOn, lineItems, grandTotal}) => {
+            return (
+            <OrderItem 
+            orderNumber={orderNumber} 
+            fulfillmentStatus={fulfillmentStatus}
+            createdOn={createdOn}
+            lineItems={lineItems}
+            grandTotal={grandTotal}
+            >
+            </OrderItem>
+            )
+        }
+    )
+
 }
 
 export default OrderList
