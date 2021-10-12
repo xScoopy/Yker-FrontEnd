@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import OrderItem from './OrderItem';
 
 const OrderList = (props) => {
     const [orders, setOrders] = useState(props.orders)
@@ -36,6 +37,7 @@ const OrderList = (props) => {
     )
     return (
         <div>
+            <p>{error.message}</p>
             <button onClick={refreshHandler}>Refresh</button>
             {orderItems}
         </div>
