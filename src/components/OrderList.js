@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const OrderList = (props) => {
     const [orders, setOrders] = useState(props.orders)
     const [error, setError] = useState("")
+
     //refresh orders
     const refreshHandler = () => {
         fetch("http://localhost:3000/routes/orders", {
@@ -32,6 +33,12 @@ const OrderList = (props) => {
             </OrderItem>
             )
         }
+    )
+    return (
+        <div>
+            <button onClick={refreshHandler}>Refresh</button>
+            {orderItems}
+        </div>
     )
 
 }
