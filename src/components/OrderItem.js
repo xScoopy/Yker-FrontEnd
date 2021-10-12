@@ -24,3 +24,5 @@ const OrderItem = (props) => {
     )
 
 }
+
+export default OrderItem
