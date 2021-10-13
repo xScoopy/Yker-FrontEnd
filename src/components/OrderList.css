@@ -13,5 +13,24 @@
   margin: 1rem 0;
 }
 .orders-labels label {
-    color: white;
+  color: white;
+}
+.button-headers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem;
+}
+.button-headers button {
+  border-radius: 12px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  margin: 5px;
+  font-weight: bold;
+}
+.button-headers button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }

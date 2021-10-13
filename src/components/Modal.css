@@ -49,3 +49,8 @@
     margin-bottom: 5px;
     border-radius: 12px;
 }
+.button:hover {
+    color: lightgray;
+    background-color: black;
+    cursor: pointer;
+}

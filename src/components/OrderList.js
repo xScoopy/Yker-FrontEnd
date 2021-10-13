@@ -40,18 +40,21 @@ const OrderList = (props) => {
   return (
     <div>
       <p>{error}</p>
-      <button onClick={refreshHandler}>Refresh</button>
+      <div className="button-headers">
+        <button onClick={refreshHandler}>Get Orders</button>
+        <button>Get Customers</button>
+      </div>
       <Card className="orders">
         <div className="orders-labels">
-            <label>Order Number</label>
-            <label>Created On</label>
-            <label>Fulfillment Status</label>
-            <label>Total Items</label>
-            <label>Total Cost</label>
-            <label></label>
-            <label></label>
-            <label></label>
-            <label></label>
+          <label>Order Number</label>
+          <label>Created On</label>
+          <label>Fulfillment Status</label>
+          <label>Total Items</label>
+          <label>Total Cost</label>
+          <label></label>
+          <label></label>
+          <label></label>
+          <label></label>
         </div>
         {orderItems}
       </Card>
