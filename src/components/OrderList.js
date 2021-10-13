@@ -25,6 +25,7 @@ const OrderList = (props) => {
         ({ orderNumber, fulfillmentStatus, createdOn, lineItems, grandTotal}) => {
             return (
             <OrderItem 
+            key={orderNumber}
             orderNumber={orderNumber} 
             fulfillmentStatus={fulfillmentStatus}
             createdOn={createdOn}
@@ -37,7 +38,7 @@ const OrderList = (props) => {
     )
     return (
         <div>
-            <p>{error.message}</p>
+            <p>{error}</p>
             <button onClick={refreshHandler}>Refresh</button>
             {orderItems}
         </div>

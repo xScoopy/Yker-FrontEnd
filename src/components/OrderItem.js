@@ -15,8 +15,8 @@ const OrderItem = (props) => {
             <p>Fulfillment Status: {props.fulfillmentStatus}</p>
             <p>Items:</p>
             <ul>
-                {props.lineItems.map(({ productName }) => {
-                    return <li>{productName}</li>
+                {props.lineItems.map(({ id, productName }) => {
+                    return <li key={id}>{productName}</li>
                 })}
             </ul>
             <p>Total Cost: {props.grandTotal.value}</p>
