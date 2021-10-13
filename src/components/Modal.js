@@ -8,15 +8,24 @@ const Modal = (props) => {
         <div className="modal" onClick={props.onClose}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h4 className="modal-title">Order Details</h4>
+              <h4 className="modal-title">{props.title}</h4>
             </div>
             <div className="modal-body">
                 <p>Items</p>
-                <ul>
-                    {props.orderLineItems.map(({ productName })=> {
-                        return <li>{productName}</li>
+                <ul className='modal-lineItems-ul'>
+                    {props.orderLineItems.map(({ productName, unitPricePaid, customizations })=> {
+                        return (
+                        <li className='modal-lineItems-li'>{productName} - {unitPricePaid.value}
+                        <ul className='customizations-ul'>
+                            {customizations.map(({ label, value }) => {
+                                return <li className='customizations-li'>{label}: {value}</li>
+                            })}
+                        </ul>
+                        </li>
+                        )
                     })}
                 </ul>
+
             </div>
             <div className="modal-footer">
               <button onClick={props.onClose} className="button">
