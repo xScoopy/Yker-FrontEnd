@@ -1,7 +1,9 @@
 
+import Modal from "./Modal"
+import React, {useState} from 'react'
 
 const OrderItem = (props) => {
-    
+const [show, setShow] = useState(false)
 
 
     return (
@@ -13,13 +15,10 @@ const OrderItem = (props) => {
               day: "numeric",
             })}</p>
             <p>Fulfillment Status: {props.fulfillmentStatus}</p>
-            <p>Items:</p>
-            <ul>
-                {props.lineItems.map(({ id, productName }) => {
-                    return <li key={id}>{productName}</li>
-                })}
-            </ul>
+            <p>Total Items: {props.lineItems.length}</p>
             <p>Total Cost: {props.grandTotal.value}</p>
+            <Modal onClose={() => setShow(false)} show={show} title="Order Number Here" orderLineItems={props.lineItems}>
+            </Modal>
         </div>
     )
 
