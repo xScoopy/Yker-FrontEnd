@@ -9,7 +9,7 @@ const OrderList = (props) => {
 
   //refresh orders
   const refreshHandler = () => {
-    fetch("http://localhost:3000/routes/orders", {
+    fetch("https://shrouded-waters-64855.herokuapp.com/routes/orders", {
       method: "GET",
       mode: "cors",
     })
