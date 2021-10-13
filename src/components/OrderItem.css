@@ -1,0 +1,35 @@
+.each-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: #4b4b4b;
+}
+.each-order__category h2 {
+  color: #3a3a3a;
+  font-size: 1rem;
+  flex: 1;
+  margin: 0 1rem;
+  color: white;
+}
+.each-order__total-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #40005d;
+    border: 1px solid white;
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+.each-order__category p {
+    font-weight: bold;
+    color: lightgray;
+}
+.each-order button {
+    border-radius: 12px;
+    padding: 0.5rem;
+    background-color: lightgray;
+    font-size: 1rem;
+    font-weight: bold;
+}

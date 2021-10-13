@@ -1,5 +1,4 @@
 import OrderList from './components/OrderList'
-import "./App.css";
 
 function App() {
   return  (

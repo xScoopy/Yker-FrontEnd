@@ -11,11 +11,10 @@ const Modal = (props) => {
               <h4 className="modal-title">{props.title}</h4>
             </div>
             <div className="modal-body">
-                <p>Items</p>
                 <ul className='modal-lineItems-ul'>
                     {props.orderLineItems.map(({ productName, unitPricePaid, customizations })=> {
                         return (
-                        <li className='modal-lineItems-li'>{productName} - {unitPricePaid.value}
+                        <li className='modal-lineItems-li'>{productName} - ${unitPricePaid.value}
                         <ul className='customizations-ul'>
                             {customizations.map(({ label, value }) => {
                                 return <li className='customizations-li'>{label}: {value}</li>

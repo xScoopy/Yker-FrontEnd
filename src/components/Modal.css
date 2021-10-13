@@ -13,6 +13,11 @@
 .modal-content {
     width: 500px;
     background-color: #fff;
+    border-radius: 12px;
+}
+
+.modal-header {
+    text-align: center;
 }
 
 .modal-header, .modal-footer {
@@ -27,4 +32,20 @@
     padding: 10px;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
+}
+.modal-lineItems-ul {
+    list-style-type: none;
+}
+.modal-lineItems-li {
+    font-weight: bold;
+}
+.customizations-li {
+    font-weight: lighter;
+    font-size: small;
+}
+.button {
+    float: right;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 12px;
 }
