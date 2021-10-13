@@ -11,6 +11,12 @@ const Modal = (props) => {
               <h4 className="modal-title">Order Details</h4>
             </div>
             <div className="modal-body">
+                <p>Items</p>
+                <ul>
+                    {props.orderLineItems.map(({ productName })=> {
+                        return <li>{productName}</li>
+                    })}
+                </ul>
             </div>
             <div className="modal-footer">
               <button onClick={props.onClose} className="button">

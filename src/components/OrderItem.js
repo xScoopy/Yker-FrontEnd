@@ -5,6 +5,9 @@ import React, {useState} from 'react'
 const OrderItem = (props) => {
 const [show, setShow] = useState(false)
 
+const modalClickHandler = (e) => {
+    setShow(true)
+}
 
     return (
         <div>
@@ -17,7 +20,8 @@ const [show, setShow] = useState(false)
             <p>Fulfillment Status: {props.fulfillmentStatus}</p>
             <p>Total Items: {props.lineItems.length}</p>
             <p>Total Cost: {props.grandTotal.value}</p>
-            <Modal onClose={() => setShow(false)} show={show} title="Order Number Here" orderLineItems={props.lineItems}>
+            <button onClick={modalClickHandler}>Details</button>
+            <Modal onClose={() => setShow(false)} show={show} title={props.orderNumber} orderLineItems={props.lineItems}>
             </Modal>
         </div>
     )
