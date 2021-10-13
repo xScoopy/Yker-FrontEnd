@@ -22,6 +22,7 @@ const OrderList = (props) => {
       });
   };
 
+
   //Order mapping to individual components
   const orderItems = orders.map(
     ({ orderNumber, fulfillmentStatus, createdOn, lineItems, grandTotal }) => {
