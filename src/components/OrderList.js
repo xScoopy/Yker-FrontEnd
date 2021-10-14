@@ -7,6 +7,8 @@ const OrderList = (props) => {
   const [orders, setOrders] = useState(props.orders);
   const [error, setError] = useState("");
 
+  const labels = document.getElementsByClassName('orders-labels')
+
   //refresh orders
   const refreshHandler = () => {
     fetch("https://shrouded-waters-64855.herokuapp.com/routes/orders", {
@@ -16,6 +18,7 @@ const OrderList = (props) => {
       .then((result) => result.json())
       .then((res) => {
         setOrders(res.result);
+        labels.style.visibility = 'visible'
       })
       .catch((err) => {
         setError(err.message);
@@ -46,7 +49,7 @@ const OrderList = (props) => {
         <button>Get Customers</button>
       </div>
       <Card className="orders">
-        <div className="orders-labels">
+        <div className="orders-labels" style={{visibility: "hidden"}}>
           <label>Order Number</label>
           <label>Created On</label>
           <label>Fulfillment Status</label>
