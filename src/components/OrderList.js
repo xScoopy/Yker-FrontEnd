@@ -6,8 +6,8 @@ import "./OrderList.css";
 const OrderList = (props) => {
   const [orders, setOrders] = useState(props.orders);
   const [error, setError] = useState("");
+  const [labelVisibility, setLabelVisibility] = useState('hidden')
 
-  const labels = document.getElementsByClassName('orders-labels')
 
   //refresh orders
   const refreshHandler = () => {
@@ -18,7 +18,7 @@ const OrderList = (props) => {
       .then((result) => result.json())
       .then((res) => {
         setOrders(res.result);
-        labels.style.visibility = 'visible'
+        setLabelVisibility('visible')
       })
       .catch((err) => {
         setError(err.message);
@@ -49,7 +49,7 @@ const OrderList = (props) => {
         <button>Get Customers</button>
       </div>
       <Card className="orders">
-        <div className="orders-labels" style={{visibility: "hidden"}}>
+        <div className="orders-labels" style={{visibility:labelVisibility}}>
           <label>Order Number</label>
           <label>Created On</label>
           <label>Fulfillment Status</label>
