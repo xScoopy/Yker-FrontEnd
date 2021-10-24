@@ -7,6 +7,7 @@ const OrderItem = (props) => {
   const [show, setShow] = useState(false);
 
   const modalClickHandler = (e) => {
+
     setShow(true);
   };
 
@@ -39,6 +40,7 @@ const OrderItem = (props) => {
         show={show}
         title={props.orderNumber}
         orderLineItems={props.lineItems}
+        customerEmail={props.customerEmail}
       ></Modal>
     </div>
   );

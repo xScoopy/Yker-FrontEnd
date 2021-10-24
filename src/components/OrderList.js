@@ -11,7 +11,7 @@ const OrderList = (props) => {
 
   //refresh orders
   const refreshHandler = () => {
-    fetch("https://shrouded-waters-64855.herokuapp.com/routes/orders", {
+    fetch("http://localhost:3000/routes/orders", {
       method: "GET",
       mode: "cors",
     })
@@ -28,7 +28,7 @@ const OrderList = (props) => {
 
   //Order mapping to individual components
   const orderItems = orders.map(
-    ({ orderNumber, fulfillmentStatus, createdOn, lineItems, grandTotal }) => {
+    ({ orderNumber, fulfillmentStatus, createdOn, lineItems, grandTotal, customerEmail }) => {
       return (
         <OrderItem
           key={orderNumber}
@@ -37,6 +37,7 @@ const OrderList = (props) => {
           createdOn={createdOn}
           lineItems={lineItems}
           grandTotal={grandTotal}
+          customerEmail={customerEmail}
         ></OrderItem>
       );
     }

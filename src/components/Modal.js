@@ -1,4 +1,5 @@
 import "./Modal.css";
+import CustomNotes from './CustomNotes'
 
 const Modal = (props) => {
     if(!props.show) {
@@ -24,7 +25,9 @@ const Modal = (props) => {
                         )
                     })}
                 </ul>
-
+                    <br />
+                    <h4 className='notes-header'>Custom Notes</h4>
+                    <CustomNotes  customerEmail={props.customerEmail}/>
             </div>
             <div className="modal-footer">
               <button onClick={props.onClose} className="button">
