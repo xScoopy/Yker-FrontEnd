@@ -47,26 +47,6 @@ const CustomNotes = (props) => {
 
   const saveNoteHandler = () => {
       saveData()
-    // const data = input;
-    // fetch("http://localhost:3000/routes/notes/" + props.customerEmail, {
-    //   method: "POST",
-    //   mode: "cors",
-    //   headers: {
-    //     "access-control-request-headers": "content-type",
-    //     "Content-Type": "text/plain",
-    //   },
-    //   body: data,
-    // })
-    //   .then((result) => result.json())
-    //   .then((res) => {
-    //     setNotes(res["notes"]);
-    //   })
-    //   .catch((err) => {
-    //     throw err;
-    //   })
-    //   .catch((err) => {
-    //     throw err;
-    //   });
   };
 
   const inputChangeHandler = (e) => {
