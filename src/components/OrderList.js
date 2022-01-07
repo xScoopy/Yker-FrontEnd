@@ -3,6 +3,7 @@ import OrderItem from "./OrderItem";
 import CustomerItem from "./CustomerItem";
 import Card from "../UI/Card";
 import "./OrderList.css";
+import "./CustomerItems.css";
 
 const OrderList = (props) => {
   const [orders, setOrders] = useState(props.orders);
@@ -39,7 +40,7 @@ const OrderList = (props) => {
         customers[orders[i].customerEmail] = {
           shippingAddress: orders[i].shippingAddress,
           totalSpend: orders[i].grandTotal.value,
-          orders: [orders[i].orderNumber],
+          orders: [orders[i].id],
         };
       }
     }
@@ -56,7 +57,6 @@ const OrderList = (props) => {
     setLabelVisibility("hidden");
     setCustomerVisibility("visible");
     setCustomerInfo(customers);
-    console.log(customerInfo);
   };
   //Order mapping to individual components
   const orderItems = orders.map(
@@ -100,15 +100,16 @@ const OrderList = (props) => {
         <button onClick={customerHandler}>Get Customers</button>
       </div>
       <div style={{ visibility: customerVisibility }}>
-        <Card classname="orders">
-          <div className="orders-labels">
+        <Card classname="customers">
+          <div className="customers-labels">
             <label>Email</label>
             <label>Total Spend</label>
             <label>Location</label>
             <label>Orders</label>
           </div>
-        </Card>
+        
         {customerBuild && customerItems ? customerItems : null}
+        </Card>
       </div>
       <div style={{ visibility: labelVisibility }}>
         <Card className="orders">

@@ -1,7 +1,6 @@
 const AddressInfo = (props) => {
-    console.log(props.info)
     return (
-        <div>
+        <div className="each-order__category">
             <div>
                 <p>city: {props.info[4]}</p>
             </div>

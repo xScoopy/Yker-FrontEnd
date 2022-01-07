@@ -34,3 +34,17 @@
   color: black;
   cursor: pointer;
 }
+.customer-line {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 1rem;
+}
+.customer-line > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.customer-line > div > p {
+  color: white;
+}
